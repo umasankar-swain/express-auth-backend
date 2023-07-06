@@ -7,7 +7,10 @@ import morgan from "morgan";
 
 //files imports
 import connectDb from "./config/db.js";
+
+//routes import
 import testRoutes from './routes/testRoute.js';
+import authRoutes from './routes/authRoutes.js';
 
 
 //config Dot env
@@ -26,6 +29,7 @@ app.use(morgan('dev'))
 
 //routes
 app.use('/api/v1/test', testRoutes)
+app.use('/api/v1/auth', authRoutes)
 
 const PORT = process.env.PORT || 8080
 

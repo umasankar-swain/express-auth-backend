@@ -18,12 +18,15 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, 'Password is required']
+        required: [true, 'Password is required'],
+        minLength: [6, "Password length should be 6 character"]
     },
     location: {
         type: String,
-        default: 'Chandigarh'
-    }
-})
+        default: 'India'
+    },
+},
+    { timestamps: true }
+)
 
 export default mongoose.model('User', userSchema)
